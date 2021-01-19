@@ -1,0 +1,27 @@
+<h1><%= @destination.name%></h1>
+<ul>
+    <% @destination.five_recent.each do |post|%>
+        <li>
+            <%=link_to post.title, post_path(post)%>
+        </li>
+    <%end%>
+</ul>
+
+<p>
+    <% if @destination.most_popular %>
+        The featured Post
+        <%= link_to @destination.most_popular.title, post_path(@destination.most_popular) %>
+    <% else %>
+        Sorry there are no featured posts
+    <% end %>
+</p>
+
+
+<p>
+    <% if @destination.average_age %>
+        The average age of this destination
+        <%= @destination.average_age%>
+    <% else %>
+        Sorry
+    <% end %>
+</p>

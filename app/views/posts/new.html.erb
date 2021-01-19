@@ -1,0 +1,15 @@
+<h1>Posts#new</h1>
+<%= form_for @post do |post| %>
+    <%= post.label :title, "Post Title"%>
+    <%=post.text_field :title %>
+    <%= post.label :content, "Post Content"%>
+    <%=post.text_field :content %>
+    <%= post.label :blogger_id, "Blogger"%>
+    <%= post.collection_select :blogger_id, Blogger.all, :id, :name %>
+    <%= post.label :destination_id, "Destination"%>
+    <%= post.collection_select :destination_id, Destination.all, :id, :name %>
+    <%= post.hidden_field :likes, value: 0 %>
+    <%= post.submit %>
+
+
+<%end%>

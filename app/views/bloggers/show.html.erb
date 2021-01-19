@@ -1,0 +1,16 @@
+<h1><%= @blogger.name %>'s Page</h1>
+
+<p>
+Your total likes: 
+<%= @blogger.total_likes %>
+</p>
+
+<p>
+Your most popular post
+<%= link_to @blogger.most_popular.title, post_path(@blogger.most_popular)%>
+</p>
+
+
+
+
+
